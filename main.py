@@ -8,7 +8,12 @@ def home():
   return render_template('home.html')
 
 @app.route("/position")
-def postions():
+def postion():
+  conn=sqlite3.connect('football.db')
+  cursor=conn.cursor()
+  cursor.execute('SELECT id FROM Position', (id,))
+  position=cursor.fetchone()
+  conn.close()
   return render_template('position.html')
   
 if __name__ == '__main__':
