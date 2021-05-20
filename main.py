@@ -11,10 +11,10 @@ def home():
 def postion():
   conn=sqlite3.connect('football.db')
   cursor=conn.cursor()
-  cursor.execute('SELECT id FROM Position', (id,))
+  cursor.execute('SELECT * FROM Position WHERE id=?;',(id,))
   position=cursor.fetchone()
   conn.close()
-  return render_template('position.html')
+  return render_template('position.html', position=position, title="Position")
   
 if __name__ == '__main__':
   app.run(port=8080, debug=True)
