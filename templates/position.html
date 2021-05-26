@@ -1,16 +1,9 @@
 {%extends 'layout.html'%}
 {% block content %}
 <h2> POSITIONS </h2>
+{% for position in position %}
 <p>{{position[0]}}</p>
-<p>{{position[1]}}</p>
-<p>{{position[2]}}</p>
-<p>{{position[3]}}</p>
-<p>{{position[4]}}</p>
-<p>{{position[5]}}</p>
-<p>{{position[6]}}</p>
-<p>{{position[7]}}</p>
-<p>{{position[8]}}</p>
-<p>{{position[9]}}</p>
+{% endfor %}
 
 
 {% endblock %}
