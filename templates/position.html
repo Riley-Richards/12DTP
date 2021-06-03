@@ -1,8 +1,8 @@
 {%extends 'layout.html'%}
 {% block content %}
 <h2> POSITIONS </h2>
-{% for position in position %}
-<p>{{position[0]}}</p>
+{% for position in positions %}
+<a href="/position/{{position[0]}}">{{position[1]}}</a>
 {% endfor %}
 
 
