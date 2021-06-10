@@ -1,6 +1,7 @@
 body{
     font-family:"Verdana";
-    background-color: #CBD4C2; 
+    background-color: white; 
+    padding-top: 50px;
   }
   h1{
     color: black;
@@ -16,7 +17,6 @@ body{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    background-color: #815355;
   }
   
   .topnav a:hover {
@@ -24,22 +24,35 @@ body{
     color: black;
   }
   
-  .topnav a.active {
-    background-color:#CBD4C2;
+  .active, .topnav {
+    background-color: lightgreen;
     color: #17252a;
   }
-  .header{
-    text-align: left;
-    padding: 20px;
-  }
+
   .topnav {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: darkgreen;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    
   }
   .footer {
     text-align: center;
     padding: 10px;
+    position: fixed;
   }
-  p{
+
+  p {
     color: #523249
+  }
+
+  li a  {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
   }

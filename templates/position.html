@@ -2,7 +2,9 @@
 {% block content %}
 <h2> POSITIONS </h2>
 {% for position in positions %}
-<a href="/position/{{position[0]}}">{{position[1]}}</a>
+<li>
+    <a href="/position/{{position[0]}}">{{position[1]}}</a>
+</li>
 {% endfor %}
 
 

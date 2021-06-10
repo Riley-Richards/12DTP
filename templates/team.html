@@ -2,7 +2,9 @@
 {% block content %}
 <h2> TEAMS </h2>
 {% for team in teams %}
-<a href="/team/{{team[0]}}">{{team[1]}}</a>
+<li>
+    <a href="/team/{{team[0]}}">{{team[1]}}</a>
+</li>
 {% endfor %}
 
 
