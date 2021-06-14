@@ -51,8 +51,13 @@ body{
     color: #523249
   }
 
-  li a  {
+  li a {
     list-style-type: none;
     text-decoration: none;
     color: black;
+  } 
+  .logo-image {
+    height:auto;
+    width: auto;
+    overflow: hidden;
   }
