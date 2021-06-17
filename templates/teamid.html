@@ -1,9 +1,10 @@
 {%extends 'layout.html'%}
 {% block content %}
-<h2> TEAMS </h2>
+    <h2> {{teamid[0]}} </h2>
 
-<p>{{teamid[0]}}</p>
-
+    <img src="static/images/teams/{{teamid[2]}}"  style="width:28px;height:28px;">
+    <p> {{teamid[1]}}</p>
+   
 
 
 {% endblock %}

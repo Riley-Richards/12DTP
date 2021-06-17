@@ -29,7 +29,7 @@ def positionid(id):
 def player():
   conn=sqlite3.connect('football.db')
   cursor=conn.cursor()
-  cursor.execute('SELECT id, name FROM Player')
+  cursor.execute('SELECT id, name, image FROM Player')
   players=cursor.fetchall()
   conn.close()
   return render_template('player.html', players=players, title="Players")
@@ -56,7 +56,7 @@ def team():
 def teamid(id):
   conn=sqlite3.connect('football.db')
   cursor=conn.cursor()
-  cursor.execute('SELECT name, info FROM Team where id=?;', (id,))
+  cursor.execute('SELECT name, info, image FROM Team where id=?;', (id,))
   teamid=cursor.fetchall()
   conn.close()
   return render_template('teamid.html', teamid=teamid, title="Team")

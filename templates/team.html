@@ -1,12 +1,14 @@
 {%extends 'layout.html'%}
 {% block content %}
-<h2> TEAMS </h2>
+<h1> TEAMS </h1>
 {% for team in teams %}
-<li>
-    <a href="/team/{{team[0]}}">{{team[1]}}
-        <img src="/static/images/teams/{{team[4]}}">
-    </a>
-</li>
+<div class ="teambutton">
+
+        <a href="/team/{{team[0]}}">
+            <img src="/static/images/teams/{{team[4]}}"  style="width:205px;height:205px;">
+        </a>
+
+</div>
 {% endfor %}
 
 

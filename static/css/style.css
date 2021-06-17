@@ -5,10 +5,10 @@ body{
   }
   h1{
     color: black;
-    background-color: 815355;
+    text-align: center;
   }
   h3{
-    color: #523249;
+    color: black;
   }
   .topnav a {
     float: left;
@@ -44,7 +44,6 @@ body{
   .footer {
     text-align: center;
     padding: 10px;
-    position: fixed;
   }
 
   p {
@@ -61,3 +60,18 @@ body{
     width: auto;
     overflow: hidden;
   }
+  
+  .teambutton a {
+    float: left;
+    color: #f0edee;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .teambutton a:hover {
+    background-color: #def2f1;
+    color: black;
+  }
+
