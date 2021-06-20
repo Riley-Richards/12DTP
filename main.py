@@ -40,8 +40,10 @@ def playerid(id):
   cursor=conn.cursor()
   cursor.execute('SELECT name, info FROM Player where id=?;', (id,))
   playerid=cursor.fetchall()
+  cursor.execute("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ( SELECT id FROM Player WHERE name=?))", (playerid[1],))
+  playertrophies=cursor.fetchall()
   conn.close()
-  return render_template('playerid.html', playerid=playerid, title="Player")
+  return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, title="Player")
 
 @app.route("/team")
 def team():
