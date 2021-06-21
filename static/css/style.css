@@ -50,7 +50,7 @@ body{
     color: #523249
   }
 
-  li a {
+  a {
     list-style-type: none;
     text-decoration: none;
     color: black;

@@ -2,11 +2,11 @@
 {% block content %}
 <h2> PLAYERS </h2>
 {% for player in players %}
-<li>
+
     <a href="/player/{{player[0]}}">{{player[1]}}</a>
-        <img src="/static/images/players/{{player[4]}}"  style="width:40px;height:40px;">
+        <img src="/static/images/players/{{player[2]}}">
     </a>
-</li>
+
 {% endfor %}
 
 
