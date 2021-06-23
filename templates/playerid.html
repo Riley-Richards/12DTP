@@ -1,8 +1,12 @@
 {%extends 'layout.html'%}
 {% block content %}
-<h2> POSITIONS </h2>
+<h2> {{playerid[0]}} </h2>
+<img src="/static/images/players/{{playerid[2]}}" style="height: auto; width: 120px;">
+<p> {{playerid[1]}} </p>
 
-<p>{{playerid[0]}}</p>
+{% for playertrophy in playertrophies %}
+    <h3>{{playertrophy[0]}}</h3>
+{% endfor %}
 
 
 

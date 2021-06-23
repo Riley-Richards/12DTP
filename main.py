@@ -38,9 +38,9 @@ def player():
 def playerid(id):
   conn=sqlite3.connect('football.db')
   cursor=conn.cursor()
-  cursor.execute('SELECT name, info FROM Player where id=?;', (id,))
-  playerid=cursor.fetchall()
-  cursor.execute("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ( SELECT id FROM Player WHERE name=?))", (playerid[1],))
+  cursor.execute('SELECT name, info, image FROM Player where id=?;', (id,))
+  playerid=cursor.fetchone()
+  cursor.execute("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,))
   playertrophies=cursor.fetchall()
   conn.close()
   return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, title="Player")
@@ -58,8 +58,8 @@ def team():
 def teamid(id):
   conn=sqlite3.connect('football.db')
   cursor=conn.cursor()
-  cursor.execute('SELECT name, info, image FROM Team where id=?;', (id,))
-  teamid=cursor.fetchall()
+  cursor.execute('SELECT * FROM Team where id=?;', (id,))
+  teamid=cursor.fetchone()
   conn.close()
   return render_template('teamid.html', teamid=teamid, title="Team")
 
