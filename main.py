@@ -21,7 +21,7 @@ def positionid(id):
   conn=sqlite3.connect('football.db')
   cursor=conn.cursor()
   cursor.execute('SELECT * FROM Position where id=?;', (id,))
-  positionid=cursor.fetchall()
+  positionid=cursor.fetchone()
   conn.close()
   return render_template('positionid.html', positionid=positionid, title="Position")
 

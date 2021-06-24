@@ -9,6 +9,7 @@ body{
   }
   h3{
     color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   .topnav a {
     float: left;
@@ -74,4 +75,5 @@ body{
     background-color: #def2f1;
     color: black;
   }
+
 
