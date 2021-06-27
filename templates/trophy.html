@@ -2,7 +2,9 @@
 {% block content %}
 <h2> TROPHIES </h2>
 {% for trophy in trophy %}
-<p>{{trophy[0]}}</p>
+<li>
+    <a href="/trophy/{{trophy[0]}}">{{trophy[1]}}</a>
+</li>
 {% endfor %}
 
 

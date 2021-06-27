@@ -1,0 +1,15 @@
+{%extends 'layout.html'%}
+{% block content %}
+<h2> {{trophyid[1]}} </h2>
+
+<p>{{trophyid[2]}}</p>
+
+<a href="/player">Winners: </a>
+{% for trophyplayer in trophyplayers %}
+<li>
+    <a href="/player/{{trophyplayer[0]}}">{{trophyplayer[1]}}</a>
+</li>
+{% endfor %}
+
+
+{% endblock %}

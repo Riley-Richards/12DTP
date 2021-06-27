@@ -54,13 +54,21 @@ def team():
 @app.route("/team/<int:id>")
 def teamid(id):
   teamid = do_query('SELECT * FROM Team where id=?;', (id,), fetchall=False)
-  return render_template('teamid.html', teamid=teamid, title="team")
+  teamtrophies = do_query("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM TeamTrophies WHERE cid = ?)", (id,), fetchall=True)
+  return render_template('teamid.html', teamid=teamid, teamtrophies=teamtrophies, title="team")
 
 #all trophies page route
 @app.route("/trophy")
 def trophy():
-  trophy = do_query('SELECT name FROM Trophies', fetchall=True)
+  trophy = do_query('SELECT id, name FROM Trophies', fetchall=True)
   return render_template('trophy.html', trophy=trophy, title="trophy")
+
+#individual trophy page route
+@app.route("/trophy/<int:id>")
+def trophyid(id):
+  trophyid = do_query('SELECT * FROM Trophies where id=?;', (id,), fetchall=False)
+  trophyplayers = do_query("SELECT id, name FROM Player WHERE id IN (SELECT fid FROM PlayerTrophies WHERE tid = ?)", (id,), fetchall=True)
+  return render_template('trophyid.html', trophyid=trophyid, trophyplayers=trophyplayers, title="trophy")
 
 if __name__ == '__main__':
  app.run(port=8080, debug=True)  
