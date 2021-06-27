@@ -3,74 +3,64 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+def do_query(query, data = None, fetchall = False):
+    conn = sqlite3.connect('football.db')
+    cursor = conn.cursor()
+    if data is None:
+        cursor.execute(query)
+    else:
+        cursor.execute(query,data)
+    results = cursor.fetchall() if fetchall else cursor.fetchone()
+    conn.close()
+    return results
+
+#home page route
 @app.route('/')
 def home():
   return render_template('home.html', title="Home")
 
+#all positions page route
 @app.route("/position")
 def postion():
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT id, names FROM Position')
-  positions=cursor.fetchall()
-  conn.close()
-  return render_template('position.html', positions=positions, title="Positions")
+  positions = do_query('SELECT id, names FROM Position', fetchall=True)
+  return render_template('position.html', positions=positions, title="position")
 
+#individual position page route
 @app.route("/position/<int:id>")
-def positionid(id):
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT * FROM Position where id=?;', (id,))
-  positionid=cursor.fetchone()
-  conn.close()
-  return render_template('positionid.html', positionid=positionid, title="Position")
+def postionid(id):
+  positionid = do_query('SELECT * FROM Position where id=?;', (id,), fetchall=False)
+  return render_template('positionid.html', positionid=positionid, title="position")
 
+#all players page route
 @app.route("/player")
 def player():
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT id, name, image FROM Player')
-  players=cursor.fetchall()
-  conn.close()
+  players = do_query('SELECT id, name, image FROM Player', fetchall=True)
   return render_template('player.html', players=players, title="Players")
 
+#individual player page route
 @app.route("/player/<int:id>")
 def playerid(id):
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT name, info, image FROM Player where id=?;', (id,))
-  playerid=cursor.fetchone()
-  cursor.execute("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,))
-  playertrophies=cursor.fetchall()
-  conn.close()
-  return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, title="Player")
+  playerid = do_query('SELECT name, info, image FROM Player where id=?;', (id,), fetchall=False)
+  playertrophies = do_query("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,), fetchall=True)
+  return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, title="player")
 
+#all teams page route
 @app.route("/team")
 def team():
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT * FROM Team')
-  teams=cursor.fetchall()
-  conn.close()
-  return render_template('team.html', teams=teams, title="Team")
+  teams = do_query('SELECT * FROM Team', fetchall=True)
+  return render_template('team.html', teams=teams, title="Teams")
 
+#individual teams page route
 @app.route("/team/<int:id>")
 def teamid(id):
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT * FROM Team where id=?;', (id,))
-  teamid=cursor.fetchone()
-  conn.close()
-  return render_template('teamid.html', teamid=teamid, title="Team")
+  teamid = do_query('SELECT * FROM Team where id=?;', (id,), fetchall=False)
+  return render_template('teamid.html', teamid=teamid, title="team")
 
+#all trophies page route
 @app.route("/trophy")
 def trophy():
-  conn=sqlite3.connect('football.db')
-  cursor=conn.cursor()
-  cursor.execute('SELECT name FROM Trophies')
-  trophy=cursor.fetchall()
-  conn.close()
-  return render_template('trophy.html', trophy=trophy, title="Trophy")
+  trophy = do_query('SELECT name FROM Trophies', fetchall=True)
+  return render_template('trophy.html', trophy=trophy, title="trophy")
 
 if __name__ == '__main__':
  app.run(port=8080, debug=True)  
