@@ -43,8 +43,9 @@ body{
     
   }
   .footer {
-    text-align: center;
+    vertical-align: text-bottom;
     padding: 10px;
+    text-align: center;
   }
 
   p {
@@ -63,12 +64,10 @@ body{
   }
   
   .teambutton a {
-    float: left;
     color: #f0edee;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
     font-size: 17px;
+    border: 2px solid gray;
   }
   
   .teambutton a:hover {
@@ -76,4 +75,11 @@ body{
     color: black;
   }
 
+  .playerbutton {
+    border-bottom: 2px solid grey;
+  }
+
+  .playerbutton li{
+    list-style-type: None;
+  }
 
