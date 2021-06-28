@@ -81,5 +81,11 @@ body{
 
   .playerbutton li{
     list-style-type: None;
+    padding: 2px;
   }
 
+  .playerbutton a{
+    vertical-align: top;
+    padding-top: 10px;
+    font-family: 'Trebuchet MS';
+  }

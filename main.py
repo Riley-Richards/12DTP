@@ -70,5 +70,9 @@ def trophyid(id):
   trophyplayers = do_query("SELECT id, name FROM Player WHERE id IN (SELECT fid FROM PlayerTrophies WHERE tid = ?)", (id,), fetchall=True)
   return render_template('trophyid.html', trophyid=trophyid, trophyplayers=trophyplayers, title="trophy")
 
+@app.route("/squadbuilder")
+def squadbuilder():
+  return render_template('squad.html', title="Squadbuilder")
+
 if __name__ == '__main__':
  app.run(port=8080, debug=True)  
