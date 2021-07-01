@@ -7,8 +7,24 @@
 
 <a href="/trophy">Trophies: </a>
 {% for playertrophy in playertrophies %}
-    <p>{{playertrophy[0]}}</p>
+<div class="playerlink">
+    <li>
+        <a href="/trophy/{{playertrophy[0]}}">{{playertrophy[1]}}</a>
+    </li>
+</div>
 {% endfor %}
+
+<br>
+
+<a href="/team">Teams: </a>
+{% for playerteam in playerteams %}
+<div class="playerteam">
+    <li>
+        <a href="/team/allteams/{{playerteam[0]}}">{{playerteam[1]}}</a>
+    </li>
+</div>
+{% endfor %}
+
 
 
 

@@ -89,3 +89,15 @@ body{
     padding-top: 10px;
     font-family: 'Trebuchet MS';
   }
+
+  .playerlink{
+    list-style-type: none;
+  } 
+
+  .playerteam{
+    list-style-type: none;
+  }
+
+  .teamplayer{
+    list-style-type: none;
+  }

@@ -10,7 +10,16 @@
     <p>{{teamtrophy[0]}}</p>
 {% endfor %}
 
-   
+<br>
+
+<a href="/player">Players: </a>
+{% for teamplayer in teamplayers %}
+<div class="teamplayer">
+    <li>
+        <a href="/player/{{teamplayer[0]}}">{{teamplayer[1]}}</a>
+    </li>
+</div>
+{% endfor %}
 
 
 {% endblock %}
