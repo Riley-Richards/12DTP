@@ -2,13 +2,12 @@
 {% block content %}
 <h1> TEAMS </h1>
 {% for team in teams %}
-<div class ="teambutton">
-    <li>
-        <a href="/team/{{team[0]}}">
-            <img src="/static/images/teams/{{team[4]}}"  style="width:auto; height:205px;">
-        </a>
-    </li>
-</div>
+    <div class ="teambutton">
+     <li>
+            <img src="/static/images/teams/{{team[4]}}"  style="width:auto; height:100px;">
+            <a href="/team/{{team[0]}}">{{team[1]}}</a>
+        </li>
+    </div>
 {% endfor %}
 
 

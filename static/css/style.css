@@ -64,10 +64,18 @@ body{
   }
   
   .teambutton a {
-    color: #f0edee;
-    text-align: center;
-    font-size: 17px;
-    border: 2px solid gray;
+    vertical-align: top;
+    padding-top: 10px;
+    font-family: 'Trebuchet MS';
+  }
+
+  .teambutton li{
+    list-style-type: None;
+    padding: 2px;
+  }
+
+  .teambutton{
+    border-bottom: 2px solid grey;
   }
   
   .teambutton a:hover {
