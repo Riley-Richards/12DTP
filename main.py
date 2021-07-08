@@ -42,7 +42,7 @@ def players():
 #individual player page route
 @app.route("/player/<int:id>")
 def playerid(id):
-  playerid = do_query('SELECT name, info, image FROM Player where id=?;', (id,), fetchall=False)
+  playerid = do_query('SELECT name, info, image, nation FROM Player where id=?;', (id,), fetchall=False)
   playertrophies = do_query("SELECT id, name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,), fetchall=True)
   playerteams = do_query("SELECT id, name FROM Team WHERE id IN (SELECT cid FROM PlayerTeams WHERE fid = ?)", (id,), fetchall=True)
   return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, playerteams=playerteams, title="player")

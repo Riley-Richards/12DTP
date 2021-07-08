@@ -64,14 +64,14 @@ body{
   }
   
   .teambutton a {
-    vertical-align: top;
-    padding-top: 10px;
+    vertical-align: 45px;
+    padding-top: none;
     font-family: 'Trebuchet MS';
   }
 
   .teambutton li{
     list-style-type: None;
-    padding: 2px;
+    padding: 20px;
   }
 
   .teambutton{
@@ -102,9 +102,11 @@ body{
     list-style-type: none;
   } 
 
-  .playerteam{
-    list-style-type: none;
-  }
+ .positionbutton a{
+   border: 2px solid grey;
+   border-radius: 5px;
+   list-style-type: none;
+ }
 
   .teamplayer{
     list-style-type: none;

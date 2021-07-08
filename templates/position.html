@@ -1,11 +1,24 @@
 {%extends 'layout.html'%}
 {% block content %}
+
+<style>
+   body {
+     background-image: url('/static/images/background.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: 80% 80%;
+     background-position: center;
+   }
+   </style>
+
+
 <h2> POSITIONS </h2>
 {% for position in positions %}
-
- <li>
-    <a href="/position/{{position[0]}}">{{position[1]}}</a>
- </li>
+<div class = "positionbutton"; onclick = 'location.href="/position/{{position[0]}}";' style = "cursor:pointer;">
+   <li>
+     <a href="/position/{{position[0]}}">{{position[1]}}</a>
+   </li>
+</div>
 
 {% endfor %}
 

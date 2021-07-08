@@ -2,10 +2,10 @@
 {% block content %}
 <h1> TEAMS </h1>
 {% for team in teams %}
-    <div class ="teambutton">
+<div class ="teambutton"; onclick='location.href="/team/{{team[0]}}";' style = "cursor:pointer;">
      <li>
             <img src="/static/images/teams/{{team[4]}}"  style="width:auto; height:100px;">
-            <a href="/team/{{team[0]}}">{{team[1]}}</a>
+                    <a>{{team[1]}}</a>
         </li>
     </div>
 {% endfor %}
