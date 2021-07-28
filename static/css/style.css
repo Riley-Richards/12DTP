@@ -21,18 +21,14 @@ body{
   }
   
   .topnav a:hover {
-    background-color: #def2f1;
+    background-color: lightgray;
     color: black;
   }
   
-  .active, .topnav {
-    background-color: lightgreen;
-    color: #17252a;
-  }
 
   .topnav {
     overflow: hidden;
-    background-color: darkgreen;
+    background-color: #1a1b20 ;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -102,12 +98,108 @@ body{
     list-style-type: none;
   } 
 
- .positionbutton a{
-   border: 2px solid grey;
-   border-radius: 5px;
-   list-style-type: none;
+  .trophybutton a {
+    vertical-align: 45px;
+    padding-top: none;
+    font-family: 'Trebuchet MS';
+  }
+
+  .trophybutton li{
+    list-style-type: None;
+    padding: 20px;
+  }
+
+  .trophybutton{
+    border-bottom: 2px solid grey;
+  }
+  
+  .trophybutton a:hover {
+    background-color: #def2f1;
+    color: black;
+  }
+
+ .position a{
+   border: 2px solid rgb(22, 32, 24);
+   border-radius: 50%;
+   background-color: #1e351e;
+   font-size: 250%;
+   color: white;
+   padding: 20%;
+   
  }
+
+ .position1 {
+   position: fixed;
+   top: 50%;
+   left: 15%;
+ }
+
+ .position2 {
+  position: fixed;
+  top: 75%;
+  left: 30%;
+}
+
+.position3 {
+  position: fixed;
+  top: 50%;
+  left: 25%;
+}
+
+.position4 {
+  position: fixed;
+  top: 25%;
+  left: 30%;
+}
+
+.position5 {
+  position: fixed;
+  top: 50%;
+  left: 35%;
+}
+
+.position6 {
+  position: fixed;
+  top: 50%;
+  left: 49%;
+}
+
+.position7 {
+  position: fixed;
+  top: 50%;
+  left: 60%;
+}
+
+.position8 {
+  position: fixed;
+  top: 75%;
+  left: 67%;
+}
+.position9 {
+  position: fixed;
+  top: 25%;
+  left: 67%;
+}
+
+.position10 {
+  position: fixed;
+  top: 50%;
+  left: 75%;
+}
 
   .teamplayer{
     list-style-type: none;
+  }
+
+  .error body{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+  }
+
+  .error{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+
   }

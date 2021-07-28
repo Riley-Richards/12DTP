@@ -23,14 +23,14 @@ def home():
 #all positions page route
 @app.route("/position")
 def postion():
-  positions = do_query('SELECT id, names FROM Position', fetchall=True)
-  return render_template('position.html', positions=positions, title="position")
+  return render_template('position.html', title="position")
 
 #individual position page route
 @app.route("/position/<int:id>")
 def postionid(id):
   positionid = do_query('SELECT * FROM Position where id=?;', (id,), fetchall=False)
-  return render_template('positionid.html', positionid=positionid, title="position")
+  playerp = do_query('SELECT * FROM Player where pid=?;', (id,), fetchall=True)
+  return render_template('positionid.html', positionid=positionid, playerp=playerp, title="position")
 
 #all players page route
 @app.route("/players")
@@ -64,7 +64,7 @@ def teamid(id):
 #all trophies page route
 @app.route("/trophy")
 def trophy():
-  trophy = do_query('SELECT id, name FROM Trophies', fetchall=True)
+  trophy = do_query('SELECT id, name, image FROM Trophies', fetchall=True)
   return render_template('trophy.html', trophy=trophy, title="trophy")
 
 #individual trophy page route

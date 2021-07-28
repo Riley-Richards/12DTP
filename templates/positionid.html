@@ -3,7 +3,12 @@
 <h2> {{positionid[1]}} </h2>
 
 <p>{{positionid[2]}}</p>
-
-
+<br>
+<a>Top Players:</a>
+{% for playerp in playerp %}
+<li>
+    <a href="/player/{{playerp[0]}}">{{playerp[1]}}</a>
+</li>
+{% endfor %}
 
 {% endblock %}

@@ -1,12 +1,14 @@
 {%extends 'layout.html'%}
 {% block content %}
 <h2> TROPHIES </h2>
+
 {% for trophy in trophy %}
-<li>
-    <a href="/trophy/{{trophy[0]}}">{{trophy[1]}}</a>
-</li>
+<div class ="trophybutton"; onclick='location.href="/trophy/{{trophy[0]}}";' style = "cursor:pointer;">
+     <li>
+            <img src="/static/images/trophies/{{trophy[2]}}"  style="width:auto; height:100px;">
+                    <a>{{trophy[1]}}</a>
+        </li>
+    </div>
 {% endfor %}
-
-
 
 {% endblock %}
