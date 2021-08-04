@@ -232,5 +232,29 @@ body{
   border-radius: 25px;
   font-size: 14px; 
 }
+.teamplayer{
+  border-bottom: 2px solid lightgray;
+  vertical-align: 10%;
+  padding-top: none;
+  font-family: 'Trebuchet MS';
+}
 
+.teamplayer img{
+  border-radius: 50%;
+}
 
+.teamimage{
+  position: fixed;
+  top: 7%;
+  right: 5%;
+}
+
+.teaminfo{
+  margin-right: 220px;
+}
+
+.search{
+  position: fixed;
+  right: 2%;
+  top: 1.5%;
+}

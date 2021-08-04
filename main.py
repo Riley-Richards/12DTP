@@ -1,5 +1,6 @@
 import sqlite3
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+
 app = Flask(__name__)
 
 
@@ -57,8 +58,8 @@ def team():
 @app.route("/team/<int:id>")
 def teamid(id):
   teamid = do_query('SELECT * FROM Team where id=?;', (id,), fetchall=False)
-  teamtrophies = do_query("SELECT name FROM Trophies WHERE id IN (SELECT tid FROM TeamTrophies WHERE cid = ?)", (id,), fetchall=True)
-  teamplayers = do_query("SELECT id, name FROM Player WHERE id IN (SELECT fid FROM PlayerTeams WHERE cid = ?)", (id,), fetchall=True)
+  teamtrophies = do_query("SELECT id, name, image FROM Trophies WHERE id IN (SELECT tid FROM TeamTrophies WHERE cid = ?)", (id,), fetchall=True)
+  teamplayers = do_query("SELECT id, name, image FROM Player WHERE id IN (SELECT fid FROM PlayerTeams WHERE cid = ?)", (id,), fetchall=True)
   return render_template('teamid.html', teamid=teamid, teamtrophies=teamtrophies, teamplayers=teamplayers, title="team")
 
 #all trophies page route
@@ -74,13 +75,27 @@ def trophyid(id):
   trophyplayers = do_query("SELECT id, name FROM Player WHERE id IN (SELECT fid FROM PlayerTrophies WHERE tid = ?)", (id,), fetchall=True)
   return render_template('trophyid.html', trophyid=trophyid, trophyplayers=trophyplayers, title="trophy")
 
+#squad builder page route
 @app.route("/squadbuilder")
 def squadbuilder():
   return render_template('squad.html', title="Squadbuilder")
 
+#404 ERROR page
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html'), 404
+
+@app.route ("/search", methods=["POST", "GET"])
+def search():
+    #search bar.
+    if request.method == "POST":
+        print (request.form.get("filter"))
+        results = do_query("SELECT * FROM Player WHERE Player.name LIKE '%' || ? || '%' ORDER BY Player.name;", (request.form.get("filter"),), fetchall = True)
+        if results == None:
+            return redirect ("/error")
+        else:
+            return render_template("searchresults.html", results = results, title = "Search Results")
+
 
 
 

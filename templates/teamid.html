@@ -2,20 +2,32 @@
 {% block content %}
 <h2> {{teamid[1]}} </h2>
 
-<img src="/static/images/teams/{{teamid[4]}}" style="height: auto; width: 120px;">
-<p> {{teamid[2]}}</p>
+<div class ="teamimage">
+    <img src="/static/images/teams/{{teamid[4]}}" style="height: 120px; width: auto;">
+</div>
 
-<a href="/trophy">Trophies: </a>
+<div class ="teaminfo">
+    <p> {{teamid[2]}}</p>
+</div>
+
+<b><a href="/trophy">Trophies: </a></b>
 {% for teamtrophy in teamtrophies %}
-    <p>{{teamtrophy[0]}}</p>
+   <div class="teamplayer">
+    <li>
+        <img src="/static/images/trophies/{{teamtrophy[2]}}" style="height: 30px; width: 30px;">
+        <a href="/trophy/{{teamtrophy[0]}}">{{teamtrophy[1]}}</a>
+    </li>
+</div>
 {% endfor %}
 
 <br>
 
-<a href="/players">Players: </a>
+<b><a href="/players">Players: </a></b>
+<br>
 {% for teamplayer in teamplayers %}
 <div class="teamplayer">
     <li>
+        <img src="/static/images/players/{{teamplayer[2]}}" style="height: 30px; width: 30px;">
         <a href="/player/{{teamplayer[0]}}">{{teamplayer[1]}}</a>
     </li>
 </div>
