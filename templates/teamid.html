@@ -1,5 +1,6 @@
 {%extends 'layout.html'%}
 {% block content %}
+
 <h2> {{teamid[1]}} </h2>
 
 <div class ="teamimage">
@@ -12,10 +13,10 @@
 
 <b><a href="/trophy">Trophies: </a></b>
 {% for teamtrophy in teamtrophies %}
-   <div class="teamplayer">
+   <div class="teamplayer" onclick='location.href="/trophy/{{teamtrophy[0]}}";' style = "cursor:pointer;">
     <li>
         <img src="/static/images/trophies/{{teamtrophy[2]}}" style="height: 30px; width: 30px;">
-        <a href="/trophy/{{teamtrophy[0]}}">{{teamtrophy[1]}}</a>
+        <a>{{teamtrophy[1]}}</a>
     </li>
 </div>
 {% endfor %}
@@ -25,10 +26,10 @@
 <b><a href="/players">Players: </a></b>
 <br>
 {% for teamplayer in teamplayers %}
-<div class="teamplayer">
+<div class="teamplayer" onclick='location.href="/player/{{teamplayer[0]}}";' style = "cursor:pointer;">
     <li>
-        <img src="/static/images/players/{{teamplayer[2]}}" style="height: 30px; width: 30px;">
-        <a href="/player/{{teamplayer[0]}}">{{teamplayer[1]}}</a>
+        <img src="/static/images/players/{{teamplayer[2]}}" style="height: 30px; width: 30px;"> 
+        <a>{{teamplayer[1]}}</a>
     </li>
 </div>
 {% endfor %}

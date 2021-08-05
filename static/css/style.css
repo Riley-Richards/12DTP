@@ -1,107 +1,110 @@
 body{
-    font-family:"Verdana";
-    background-color: white; 
-    padding-top: 50px;
-  }
-  h1{
-    color: black;
-    text-align: center;
-  }
-  h3{
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .topnav a {
-    float: left;
-    color: #f0edee;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: lightgray;
-    color: black;
-  }
-  
+  font-family:"Verdana";
+  background-color: white; 
+  padding-top: 50px;
+}
 
-  .topnav {
-    overflow: hidden;
-    background-color: #1a1b20 ;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
+h1{
+  color: black;
+  text-align: center;
+}
+
+h3{
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.topnav a {
+  float: left;
+  color: #f0edee;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+  
+.topnav a:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #1a1b20 ;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
     
   }
-  .footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    text-align: center;
-  }
 
-  p {
-    color: black;
-  }
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  text-align: center;
+}
 
-  a {
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-  } 
-  .logo-image {
-    height:auto;
-    width: auto;
-    overflow: hidden;
-  }
+p {
+  color: black;
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+} 
+
+.logo-image {
+  height:auto;
+  width: auto;
+  overflow: hidden;
+}
   
-  .teambutton a {
-    vertical-align: 45px;
-    padding-top: none;
-    font-family: 'Trebuchet MS';
-  }
+.teambutton a {
+  vertical-align: 45px;
+  padding-top: none;
+  font-family: 'Trebuchet MS';
+}
 
-  .teambutton li{
-    list-style-type: None;
-    padding: 20px;
-  }
+.teambutton li{
+  list-style-type: None;
+  padding: 20px;
+}
 
-  .teambutton{
-    border-bottom: 2px solid grey;
-  }
+.teambutton{
+  border-bottom: 2px solid grey;
+}
   
-  .teambutton a:hover {
-    background-color: #def2f1;
-    color: black;
-  }
+.teambutton :hover {
+  background-color: rgb(187, 211, 187);
+  color: black;
+}
 
-  .playerbutton {
-    border-bottom: 2px solid grey;
-  }
+.playerbutton {
+  border-bottom: 2px solid grey;
+}
 
-  .playerbutton li{
-    list-style-type: None;
-    padding: 2px;
-  }
+.playerbutton li{
+  list-style-type: None;
+  padding: 2px;
+}
 
-  .playerbutton a{
-    vertical-align: top;
-    padding-top: 10px;
-    font-family: 'Trebuchet MS';
-  }
+.playerbutton a{
+  vertical-align: top;
+  padding-top: 10px;
+  font-family: 'Trebuchet MS';
+}
 
-  .playerlink{
-    list-style-type: none;
-  } 
+  .playerbutton:hover{
+    background-color: rgb(187, 211, 187);
+  }
 
   .trophybutton a {
     vertical-align: 45px;
@@ -118,8 +121,8 @@ body{
     border-bottom: 2px solid grey;
   }
   
-  .trophybutton a:hover {
-    background-color: #def2f1;
+  .trophybutton :hover {
+    background-color: rgb(187, 211, 187);
     color: black;
   }
 
@@ -130,7 +133,11 @@ body{
    font-size: 250%;
    color: white;
    padding: 20%;
-   
+ }
+ 
+ .position a:hover{
+   background-color: beige;
+   color: black;
  }
 
  .position1 {
@@ -192,18 +199,14 @@ body{
   left: 75%;
 }
 
-.teamplayer{
-    list-style-type: none;
-}
-
 .error{
     margin: 0;
     padding: 0;
     font-family: "montserrat", sans-serif;
     width: 100%;
     position: absolute;
-    top: 20%;
-    text-align: center;
+  top: 20%;
+  text-align: center;
 }
 
 .error h1 {
@@ -232,11 +235,18 @@ body{
   border-radius: 25px;
   font-size: 14px; 
 }
+
 .teamplayer{
   border-bottom: 2px solid lightgray;
-  vertical-align: 10%;
-  padding-top: none;
-  font-family: 'Trebuchet MS';
+  padding: 1%;
+  font-family: 'Arial';
+  list-style-type: none;
+  margin-right: 50%;
+  font-size: large;
+}
+
+.teamplayer:hover{
+  background-color:rgb(187, 211, 187) ;
 }
 
 .teamplayer img{
@@ -250,6 +260,29 @@ body{
 }
 
 .teaminfo{
+  margin-right: 220px;
+}
+
+.playerteam{
+  border-bottom: 2px solid lightgray;
+  vertical-align: 10%;
+  padding-top: none;
+  font-family: 'Trebuchet MS';
+  list-style-type: none;
+  margin-right: 85%;
+}
+
+.player img{
+  border-radius: 50%;
+}
+
+.playerimage{
+  position: fixed;
+  top: 7%;
+  right: 5%;
+}
+
+.playerinfo{
   margin-right: 220px;
 }
 

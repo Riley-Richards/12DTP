@@ -44,8 +44,8 @@ def players():
 @app.route("/player/<int:id>")
 def playerid(id):
   playerid = do_query('SELECT name, info, image, nation FROM Player where id=?;', (id,), fetchall=False)
-  playertrophies = do_query("SELECT id, name FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,), fetchall=True)
-  playerteams = do_query("SELECT id, name FROM Team WHERE id IN (SELECT cid FROM PlayerTeams WHERE fid = ?)", (id,), fetchall=True)
+  playertrophies = do_query("SELECT id, name, image FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,), fetchall=True)
+  playerteams = do_query("SELECT id, name, image FROM Team WHERE id IN (SELECT cid FROM PlayerTeams WHERE fid = ?)", (id,), fetchall=True)
   return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, playerteams=playerteams, title="player")
 
 #all teams page route
@@ -85,7 +85,7 @@ def squadbuilder():
 def page_not_found(e):
     return render_template('error.html'), 404
 
-@app.route ("/search", methods=["POST", "GET"])
+@app.route ("/player", methods=["POST", "GET"])
 def search():
     #search bar.
     if request.method == "POST":
