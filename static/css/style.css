@@ -20,6 +20,7 @@ h3{
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: monospace;
 }
   
 .topnav a:hover {
@@ -283,6 +284,33 @@ a {
 }
 
 .playerinfo{
+  margin-right: 220px;
+}
+
+.trophyplayer{
+  border-bottom: 2px solid lightgray;
+  padding: 1%;
+  font-family: 'Arial';
+  list-style-type: none;
+  margin-right: 50%;
+  font-size: large;
+}
+
+.trophyplayer:hover{
+  background-color:rgb(187, 211, 187) ;
+}
+
+.trophyplayer img{
+  border-radius: 50%;
+}
+
+.trophyimage{
+  position: fixed;
+  top: 7%;
+  right: 5%;
+}
+
+.trophyinfo{
   margin-right: 220px;
 }
 

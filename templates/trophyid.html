@@ -1,15 +1,24 @@
 {%extends 'layout.html'%}
 {% block content %}
+
 <h2> {{trophyid[1]}} </h2>
-<img src="/static/images/trophies/{{trophyid[5]}}" style="height: auto; width: 120px;">
 
-<p>{{trophyid[2]}}</p>
+<div class = "trophyimage">
+    <img src="/static/images/trophies/{{trophyid[5]}}" style="height: auto; width: 120px;">
+</div>
 
-<a href="/player">Winners: </a>
+<div class = "trophyinfo">
+    <p>{{trophyid[2]}}</p>
+</div>
+
+<a>Winners: </a>
 {% for trophyplayer in trophyplayers %}
-<li>
-    <a href="/player/{{trophyplayer[0]}}">{{trophyplayer[1]}}</a>
-</li>
+<div class="trophyplayer" onclick='location.href="/player/{{trophyplayer[0]}}";' style = "cursor:pointer;">
+    <li>
+        <img src="/static/images/players/{{trophyplayer[2]}}" style="height: 30px; width: 30px;">
+        <a>{{trophyplayer[1]}}</a>
+    </li>
+</div>
 {% endfor %}
 
 

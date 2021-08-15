@@ -72,8 +72,9 @@ def trophy():
 @app.route("/trophy/<int:id>")
 def trophyid(id):
   trophyid = do_query('SELECT * FROM Trophies where id=?;', (id,), fetchall=False)
-  trophyplayers = do_query("SELECT id, name FROM Player WHERE id IN (SELECT fid FROM PlayerTrophies WHERE tid = ?)", (id,), fetchall=True)
-  return render_template('trophyid.html', trophyid=trophyid, trophyplayers=trophyplayers, title="trophy")
+  trophyplayers = do_query("SELECT id, name, image FROM Player WHERE id IN (SELECT fid FROM PlayerTrophies WHERE tid = ?)", (id,), fetchall=True)
+  trophyteams = do_query("SELECT id, name, image FROM Team WHERE id IN (SELECT fid FROM TeamTrophies WHERE tid = ?)", (id,), fetchall=True)
+  return render_template('trophyid.html', trophyid=trophyid, trophyplayers=trophyplayers, trophyteams=trophyteams, title="trophy")
 
 #squad builder page route
 @app.route("/squadbuilder")
