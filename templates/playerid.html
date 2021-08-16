@@ -14,20 +14,22 @@
 <b>Teams:</b>
 {% for playerteam in playerteams %}
 
-<div class="playerteam">
+<div class="playerteam" onclick='location.href="/team/{{playerteam[0]}}";' style = "cursor:pointer;">
     <img src="/static/images/teams/{{playerteam[2]}}" style="height: 30px; width: 30px;">
-    <a href="/team/{{playerteam[0]}}">{{playerteam[1]}}</a>
+    <a>{{playerteam[1]}}</a>
 </div>
 
 {% endfor %}
 
+<br>
+
 <b><a href="/trophy">Trophies: </a></b>
 {% for playertrophy in playertrophies %}
 
-<div class="playerteam">
+<div class="playerteam" onclick='location.href="/trophy/{{playertrophy[0]}}";' style = "cursor:pointer;">
     <li>
         <img src="/static/images/trophies/{{playertrophy[2]}}" style="height: 30px; width: 30px;">
-        <a href="/trophy/{{playertrophy[0]}}">{{playertrophy[1]}}</a>
+        <a>{{playertrophy[1]}}</a>
     </li>
 </div>
 
