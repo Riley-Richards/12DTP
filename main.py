@@ -45,7 +45,7 @@ def players():
 def playerid(id):
   playerid = do_query('SELECT name, info, image, nation FROM Player where id=?;', (id,), fetchall=False)
   playertrophies = do_query("SELECT id, name, image FROM Trophies WHERE id IN (SELECT tid FROM PlayerTrophies WHERE fid = ?)", (id,), fetchall=True)
-  playerteams = do_query("SELECT id, name, image FROM Team WHERE id IN (SELECT cid FROM PlayerTeams WHERE fid = ?)", (id,), fetchall=True)
+  playerteams = do_query("SELECT * FROM Team WHERE id IN (SELECT cid FROM PlayerTeams WHERE fid = ?)", (id,), fetchall=True)
   return render_template('playerid.html', playerid=playerid, playertrophies=playertrophies, playerteams=playerteams, title="player")
 
 #all teams page route
@@ -86,17 +86,26 @@ def squadbuilder():
 def page_not_found(e):
     return render_template('error.html'), 404
 
-@app.route ("/player", methods=["POST", "GET"])
-def search():
-    #search bar.
-    if request.method == "POST":
-        print (request.form.get("filter"))
-        results = do_query("SELECT * FROM Player WHERE Player.name LIKE '%' || ? || '%' ORDER BY Player.name;", (request.form.get("filter"),), fetchall = True)
-        if results == None:
-            return redirect ("/error")
-        else:
-            return render_template("searchresults.html", results = results, title = "Search Results")
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title = 'Contact')
+
+#form for user to fill in name,email and message
+@app.route ("/message", methods=["POST"])
+def message():
+    #allows user to input their name, email and message as contact.
+    connection = sqlite3.connect('football.db')
+    cursor = connection.cursor()
+    user_first_name = request.form["user_first_name"]
+    user_last_name = request.form["user_last_name"]
+    user_email = request.form["user_email"]
+    user_message = request.form["user_message"]
+    sql = "INSERT INTO contact(user_first_name, user_last_name, user_email, user_message) VALUES (?, ?, ?, ?)"
+    cursor.execute(sql,(user_first_name, user_last_name, user_email, user_message))
+    connection.commit()
+    connection.close()
+    return render_template('contact.html')
 
 
 

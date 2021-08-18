@@ -238,6 +238,14 @@ a {
   font-size: 14px; 
 }
 
+.test:hover{
+  opacity: 0.5;
+}
+
+.error a:hover{
+  opacity: 0.5;
+}
+
 .teamplayer{
   border-bottom: 2px solid lightgray;
   padding: 1%;
@@ -323,4 +331,37 @@ a {
   position: fixed;
   right: 2%;
   top: 1.5%;
+}
+
+.contact{
+  top: 50%;
+  left: 50%;
+}
+
+input{
+  padding:10px;
+  width: 100px;
+  border: 2px solid lightgray;
+  border-radius: 5;
+}
+
+input:hover{
+  color:grey;
+}
+
+input[type=email]{
+  width: 240px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid lightgray;
+  border-radius: 5;
+}
+
+
+textarea{
+  padding:10px;
+  width: 240px;
+  height: auto;
+  border: 2px solid lightgray;
+  border-radius: 5;
 }
