@@ -1,8 +1,28 @@
 {%extends 'layout.html'%}
 {% block content %}
+
 <h2> Squad Builder </h2>
 
 
+<div class = "squad">
+    <form id="user_input" action="/squad" method="post"> 
+            <input type="text" id="name" required placeholder="Choose a Team Name" name="name"> <br> <br>
+            <input type="text" id="name" required placeholder="Choose a Goalkeeper" name="gk"> <br>
+            <input type="text" id="name" required placeholder="Choose a Right Back" name="rb"> <br>
+            <input type="text" id="name" required placeholder="Choose a Centre Back" name="cb"> <br>
+            <input type="text" id="name" required placeholder="Choose a Left Back" name="lb"> <br>
+            <input type="text" id="name" required placeholder="Choose a Defensive Midfielder" name="cdm"> <br>
+            <input type="text" id="name" required placeholder="Choose a Centre Midfielder" name="cm"> <br>
+            <input type="text" id="name" required placeholder="Choose a Attacking Midfielder" name="cam"> <br>
+            <input type="text" id="name" required placeholder="Choose a Left Winger" name="lw"> <br>
+            <input type="text" id="name" required placeholder="Choose a Right Winger" name="rw"> <br>
+            <input type="text" id="name" required placeholder="Choose a Striker" name="st"> <br>
+            <input type="submit" id="submit" value="SEND">
+</div>
+
+<br>
+
+<a href="/allsquads">View All Squads</a>
 
 
 {% endblock %}

@@ -340,7 +340,7 @@ a {
 
 input{
   padding:10px;
-  width: 100px;
+  width: 200px;
   border: 2px solid lightgray;
   border-radius: 5;
 }
@@ -364,4 +364,14 @@ textarea{
   height: auto;
   border: 2px solid lightgray;
   border-radius: 5;
+}
+
+.contact p{
+  text-decoration: none;
+  background: rgb(7, 110, 7);
+  color: white;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 14px; 
 }

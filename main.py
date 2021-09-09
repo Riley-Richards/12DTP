@@ -76,10 +76,36 @@ def trophyid(id):
   trophyteams = do_query("SELECT id, name, image FROM Team WHERE id IN (SELECT fid FROM TeamTrophies WHERE tid = ?)", (id,), fetchall=True)
   return render_template('trophyid.html', trophyid=trophyid, trophyplayers=trophyplayers, trophyteams=trophyteams, title="trophy")
 
-#squad builder page route
 @app.route("/squadbuilder")
 def squadbuilder():
-  return render_template('squad.html', title="Squadbuilder")
+     return render_template('squad.html')
+
+#squad builder page route
+@app.route("/squad", methods=["POST"])
+def squad():
+    connection = sqlite3.connect('football.db')
+    cursor = connection.cursor()
+    name = request.form["name"]
+    gk = request.form["gk"]
+    rb = request.form["rb"]
+    cb = request.form["cb"]
+    lb = request.form["lb"]
+    cdm = request.form["cdm"]
+    cm = request.form["cm"]
+    cam = request.form["cam"]
+    lw = request.form["lw"]
+    rw = request.form["rw"]
+    st = request.form["st"]
+    sql = "INSERT INTO squadbuilder(name, gk, lb, cb, rb, cdm, cm, cam, lw, rw, st) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    cursor.execute(sql,(name, gk, lb, cb, rb, cdm, cm, cam, lw, rw, st))
+    connection.commit()
+    connection.close()
+    return render_template('squad.html')
+
+@app.route("/allsquads")
+  def allsquads():
+    allsquads = do_query("SELECT id, name FROM squad")
+    return render_template('allsquads.html')
 
 #404 ERROR page
 @app.errorhandler(404)
@@ -91,10 +117,9 @@ def page_not_found(e):
 def contact():
     return render_template('contact.html', title = 'Contact')
 
-#form for user to fill in name,email and message
+submit = None
 @app.route ("/message", methods=["POST"])
 def message():
-    #allows user to input their name, email and message as contact.
     connection = sqlite3.connect('football.db')
     cursor = connection.cursor()
     user_first_name = request.form["user_first_name"]
@@ -105,7 +130,8 @@ def message():
     cursor.execute(sql,(user_first_name, user_last_name, user_email, user_message))
     connection.commit()
     connection.close()
-    return render_template('contact.html')
+    submit = True
+    return render_template('contact.html', submit = submit)
 
 
 

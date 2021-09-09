@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>All user created squads</h2>
+
+{% for squad in squads %}
+<div class ="teambutton"; onclick='location.href="/squad/{{squad[0]}}";' style = "cursor:pointer;">
+    <a>{{squad[1]}}</a>
+</div>
+{% endfor %}
+
+{% endblock %}
