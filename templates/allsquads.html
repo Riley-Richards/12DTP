@@ -2,9 +2,11 @@
 {% block content %}
 <h2>All user created squads</h2>
 
-{% for squad in squads %}
-<div class ="teambutton"; onclick='location.href="/squad/{{squad[0]}}";' style = "cursor:pointer;">
-    <a>{{squad[1]}}</a>
+{% for allsquad in allsquads %}
+<div class ="playerteam"; onclick='location.href="/squad/{{allsquad[0]}}";' style = "cursor:pointer;">    
+    <li>
+        <a>{{allsquad[1]}}</a>
+    </li>
 </div>
 {% endfor %}
 

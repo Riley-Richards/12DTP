@@ -1,0 +1,28 @@
+{%extends 'layout.html'%}
+{% block content %}
+
+
+
+
+<div class = "user_squad"> 
+    <h2> {{user_squad[1]}} </h2>
+    <div class = "gk"><p>GK: {{user_squad[2]}}</p></div>
+    <div class = "lb"><p>LB: {{user_squad[3]}}</p></div>
+    <div class = "rcb"><p>RCB: {{user_squad[4]}}</p></div>
+    <div class = "lcb"><p>LCB:{{user_squad[5]}}</p></div>
+    <div class = "rb"><p>RB: {{user_squad[6]}}</p></div>
+    <div class = "cdm"><p>CDM: {{user_squad[7]}}</p></div>
+    <div class = "cm"><p>CM: {{user_squad[8]}}</p></div>
+    <div class = "cam"><p>CAM: {{user_squad[9]}}</p></div>
+    <div class = "lw"><p>LW: {{user_squad[10]}}</p></div>
+    <div class = "rw"><p>RW: {{user_squad[11]}}</p></div>
+    <div class = "st"><p>ST: {{user_squad[12]}}</p></div>
+
+</div>
+
+<div class = "back">
+    <a href ="/allsquads">Back To View All Squads</a>
+</div>
+
+    
+{% endblock %}

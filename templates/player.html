@@ -1,6 +1,12 @@
 {%extends 'layout.html'%}
 {% block content %}
 <h2> ALL PLAYERS </h2>
+
+
+{% include 'search.html' %}
+
+<br>
+
 {% for player in players %}
  <div class="playerbutton" onclick='location.href="/player/{{player[0]}}";' style = "cursor:pointer;"> 
     <li>
