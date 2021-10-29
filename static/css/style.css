@@ -4,6 +4,10 @@ body{
   padding-top: 50px;
 }
 
+:root {
+  --hover-color: rgb(187, 211, 187);
+}
+
 h1{
   color: black;
   text-align: center;
@@ -63,7 +67,6 @@ a {
 } 
 
 .home {
-  margin-right: 30%;
   border-top:2px solid grey;
   margin-top: 2%;
 }
@@ -100,7 +103,7 @@ a {
 }
   
 .teambutton :hover {
-  background-color: rgb(187, 211, 187);
+  background-color: var(--hover-color);
   color: black;
 }
 
@@ -120,7 +123,7 @@ a {
 }
 
   .playerbutton:hover{
-    background-color: rgb(187, 211, 187);
+    background-color: var(--hover-color);
   }
 
   .trophybutton a {
@@ -139,7 +142,7 @@ a {
   }
   
   .trophybutton :hover {
-    background-color: rgb(187, 211, 187);
+    background-color: var(--hover-color);
     color: black;
   }
 
@@ -264,7 +267,7 @@ a {
 }
 
 .teamplayer:hover{
-  background-color:rgb(187, 211, 187) ;
+  background-color: var(--hover-color);
 }
 
 .teamplayer img{
@@ -291,7 +294,7 @@ a {
 }
 
 .playerteam:hover{
-  background-color:rgb(187, 211, 187) ;
+  background-color: var(--hover-color);
 }
 
 .playerteam img{
@@ -318,7 +321,7 @@ a {
 }
 
 .trophyplayer:hover{
-  background-color:rgb(187, 211, 187) ;
+  background-color:var(--hover-color);
 }
 
 .trophyplayer img{
@@ -481,8 +484,12 @@ textarea{
   width: 20%;
   margin-top: 2%;
   text-align: center;
+  margin-left: 1%;
 }
 
+.homebutton :hover{
+  color: var(--hover-color);
+}
 
 .searchbar input[type=text] {
   width: 10%;

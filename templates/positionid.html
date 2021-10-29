@@ -1,14 +1,17 @@
 {%extends 'layout.html'%}
 {% block content %}
-<h2> {{positionid[1]}} </h2>
+<h2> {{position_id[1]}} </h2>
 
-<p>{{positionid[2]}}</p>
+<p>{{position_id[2]}}</p>
 <br>
 <a>Top Players:</a>
-{% for playerp in playerp %}
-<li>
-    <a href="/player/{{playerp[0]}}">{{playerp[1]}}</a>
-</li>
+{% for player_position in player_position %}
+<div class="teamplayer" onclick='location.href="/player/{{player_position[0]}}";' style = "cursor:pointer;">
+    <li>
+        <img src="/static/images/players/{{player_position[2]}}" style="height: 30px; width: 30px;"> 
+        <a>{{player_position[1]}}</a>
+    </li>
+</div>
 {% endfor %}
 
 {% endblock %}

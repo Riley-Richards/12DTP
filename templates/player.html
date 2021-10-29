@@ -8,12 +8,13 @@
 <br>
 
 {% for player in players %}
- <div class="playerbutton" onclick='location.href="/player/{{player[0]}}";' style = "cursor:pointer;"> 
-    <li>
-        <img src="/static/images/players/{{player[2]}}" style="height: 100px; width: auto;">
-        <a>{{player[1]}}</a>
-    </li>
-
+<div class="playerbutton" onclick='location.href="/player/{{player[0]}}";' style = "cursor:pointer;"> 
+    <ol>
+        <li>
+            <img src="/static/images/players/{{player[2]}}" style="height: 100px; width: auto;">
+            <a>{{player[1]}}</a>
+        </li>
+    </ol>
 </div>  
 {% endfor %}
 
